@@ -1,7 +1,15 @@
-<div id="bg" style="width: 100vw; height: 100vh; position: fixed; z-index: -100;">
+<style>
+    #bg{
+        width: 100vw!important;
+        height: 100vh!important;
+        position: fixed!important;
+        z-index: -100!important;
+    }
+</style>
+<div id="bg">
     @php
         
-        // $background_type = ''; // image_changer | image_changer_fade | night_moon | spiderweb | web_buildings | stars_to_up | zodiac_sign | waves | moving_note | note
+        $background_type = 'web_buildings'; // image_changer | image_changer_fade | night_moon | spiderweb | web_buildings | stars_to_up | zodiac_sign | waves | moving_note | note
         
         // if (empty($background_type)) {
         //     $time = intval(date('H'));
@@ -12,7 +20,12 @@
         //     }
         // }
         
-        $topImageUrl_arr = ['layout/bg/img/main/01.jpg', 'layout/bg/img/main/02.jpg', 'layout/bg/img/main/03.jpg', 'layout/bg/img/main/04.jpg'];
+        $topImageUrl_arr = [
+            'http://placehold.jp/1200x720.png?text=背景画像1',
+            'http://placehold.jp/1200x720.png?text=背景画像2',
+            'http://placehold.jp/1200x720.png?text=背景画像3',
+            'http://placehold.jp/1200x720.png?text=背景画像4',
+        ];
         
     @endphp
 
@@ -71,7 +84,7 @@
                     }
                 }
 
-            </style>
+            </>
 
         @break
         @case('')
@@ -253,6 +266,15 @@
         @break
 
         @case('web_buildings')
+            <script>
+                var options__web_buildings = {
+                    particleColor: '#999',
+                    background: 'layout/bg/img/building.jpg', // '#fff',
+                    interactive: true,
+                    speed: 'medium',
+                    density: 'high'
+                };
+            </script>
             <script src="./layout/bg/js/web_buildings.js"></script>
         @break
 
@@ -292,6 +314,9 @@
                 }
 
             </style>
+            <script>
+                var zodiac_sign__dotColor = '#ddd', zodiac_sign__lineColor = '#ddd';
+            </script>
             <script src="./layout/bg/js/zodiac_sign.js"></script>
         @break
 
